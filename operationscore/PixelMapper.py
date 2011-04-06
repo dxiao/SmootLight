@@ -10,6 +10,7 @@ class PixelMapper(SmootCoreObject):
         self.totalCalls = 0
         self.cachehits = 0
     def mapEvent(self, eventLocation, screen):
+        return self.mappingFunction(eventLocation, screen) ##REMOVING CACHING
         self.totalCalls += 1
         if self.totalCalls % 100 == 0:
             main_log.info('Cache percentage for :', self['Id'], self.cachehits /\
