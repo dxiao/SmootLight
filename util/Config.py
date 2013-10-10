@@ -127,7 +127,7 @@ def attemptEval(val):
             #resolved dynamically.
         else:
             val = eval(val)
-    except (NameError, SyntaxError):
+    except (NameError, SyntaxError, TypeError):
         val = str(val)
     return val
 
